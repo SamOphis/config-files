@@ -1,0 +1,1 @@
+/home/sam/.p10k.zsh
