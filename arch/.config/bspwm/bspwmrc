@@ -1,1 +1,31 @@
-/home/sam/.config/bspwm/bspwmrc
+#!/bin/sh
+
+BSPWM_BORDER_COLOR="#000000"
+bspc monitor -d I II III IV V			# setting up desktops
+
+# colors
+# note: these are all constant
+bspc config active_border_color	  $BSPWM_BORDER_COLOR
+bspc config normal_border_color   $BSPWM_BORDER_COLOR
+bspc config focused_border_color  $BSPWM_BORDER_COLOR
+bspc config presel_feedback_color $BSPWM_BORDER_COLOR
+
+# border
+bspc config border_width         1  # border width
+
+# gaps and padding
+bspc config window_gap          20  # gap between windows
+bspc config top_padding         10  # padding from top of screen
+bspc config right_padding       10  # padding from right of screen
+bspc config bottom_padding      10  # padding from bottom of screen
+bspc config left_padding        10  # padding from left of screen
+
+bspc config split_ratio        	0.5 # split ratio
+
+# configuration and rules
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_follows_pointer true
+bspc config pointer_follows_monitor true
+
+bspc rule -a Rofi state=floating

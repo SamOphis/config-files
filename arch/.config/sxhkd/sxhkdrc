@@ -1,1 +1,29 @@
-/home/sam/.config/sxhkd/sxhkdrc
+alt + q
+	rofi -show drun
+
+ctrl + alt + t
+	kitty
+
+alt + {shift + q}
+	bspc node -c
+
+super + r
+	pkill -USR1 -x sxhkd
+
+super + alt + {q, r}
+	bspc {quit, wm -r}
+
+super + {_, shift + }{1-9,0}
+	bspc {desktop -f, node -d} '^{1-9,10}'
+
+Print
+	flameshot gui
+
+XF86AudioRaiseVolume
+	amixer sset Master 10%+
+
+XF86AudioLowerVolume
+	amixer sset Master 10%-
+
+XF86AudioMute
+	amixer set Master toggle
