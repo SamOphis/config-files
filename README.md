@@ -5,4 +5,4 @@ As always, be careful when adding any untrusted scripts to your own systems.
 # Screenshots
 The `arch` folder contains config files for my current Arch Desktop setup. Here's a screenshot, taken on July 22 2020.
 
-![](https://i.imgur.com/UnhPJP0.png)
+![](https://i.redd.it/6a2a6r5tzic51.png)
