@@ -5,7 +5,7 @@ sxhkd &
 redshift -P &
 flameshot &
 setxkbmap -layout gb &
-feh --bg-scale $HOME/Downloads/image.jpg &
+feh --bg-scale $HOME/Downloads/image.png &
 compton --config $XDG_CONFIG_HOME/compton/compton.conf &
 dunst &
 xset m 0 0 &
