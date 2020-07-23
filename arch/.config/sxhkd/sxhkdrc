@@ -1,29 +1,51 @@
-alt + q
-	rofi -show drun
-
-ctrl + alt + t
+# Opens the kitty terminal emulator.
+alt + t
 	kitty
 
+# Kill the focused node.
 alt + {shift + q}
-	bspc node -c
+	bspc node -k
 
-super + r
+# Reload sxhkd. Used to apply changes.
+ctrl + r
 	pkill -USR1 -x sxhkd
 
-super + alt + {q, r}
-	bspc {quit, wm -r}
+# Send node to desktop, or focus desktop.
+super + {_, shift + }{1-9, 0}
+	bspc {desktop -f, node -d} ^{1-9, 10}
 
-super + {_, shift + }{1-9,0}
-	bspc {desktop -f, node -d} '^{1-9,10}'
+# Set node state to tiled/floating.
+super + {t, f}
+	bspc node -t {tiled, floating}
 
+# Move node by 10 pixels.
+super + {Up, Down, Left, Right}
+	bspc node -v {0 -10, 0 10, -10 0, 10 0}
+
+# Enlarge node by 10 pixels.
+super + shift + {Up, Down, Left, Right}
+	bspc node -z {top 0 -10, bottom 0 10, left -10 0, right 10 0}
+
+# Shrink node by 10 pixels.
+super + alt + {Up, Down, Left, Right}
+	bspc node -z {top 0 10, bottom 0 -10, left 10 0, right -10 0}
+
+# App launcher.
+Menu
+	rofi -show drun
+
+# Take a flameshot screenshot.
 Print
 	flameshot gui
 
+# Raise volume by 10%.
 XF86AudioRaiseVolume
 	amixer sset Master 10%+
 
+# Lower volume by 10%.
 XF86AudioLowerVolume
 	amixer sset Master 10%-
 
+# Toggle mute.
 XF86AudioMute
 	amixer set Master toggle
