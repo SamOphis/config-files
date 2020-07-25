@@ -5,10 +5,12 @@ fi
 export ZSH="/home/sam/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
 plugins=(git wd fast-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+
+eval $(ssh-agent -s) > /dev/null 2>&1
+ssh-add /home/sam/.ssh/github > /dev/null 2>&1
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
